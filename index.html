@@ -3,14 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clock</title>
+  <title>Focus Clock | Pomodoro Timer & Stopwatch</title>
+  <meta name="description" content="Stay on track with Focus Clock, a responsive Pomodoro timer, countdown timer, and lap stopwatch with sound alerts, saved settings, and mobile-friendly controls." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://example.com/focus-clock" />
+  <meta property="og:title" content="Focus Clock | Pomodoro Timer & Stopwatch" />
+  <meta property="og:description" content="Stay on track with Focus Clock, a responsive Pomodoro timer, countdown timer, and lap stopwatch with sound alerts, saved settings, and mobile-friendly controls." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com/focus-clock" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A//www.w3.org/2000/svg'%20viewBox%3D'0%200%2064%2064'%3E%3Ccircle%20cx%3D'32'%20cy%3D'32'%20r%3D'28'%20fill%3D'%230c121a'%20stroke%3D'%234cc2ff'%20stroke-width%3D'4'/%3E%3Cline%20x1%3D'32'%20y1%3D'32'%20x2%3D'32'%20y2%3D'16'%20stroke%3D'%237ef29d'%20stroke-width%3D'4'%20stroke-linecap%3D'round'/%3E%3Cline%20x1%3D'32'%20y1%3D'32'%20x2%3D'44'%20y2%3D'32'%20stroke%3D'%234cc2ff'%20stroke-width%3D'4'%20stroke-linecap%3D'round'/%3E%3C/svg%3E" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="app" aria-label="Clock App">
+  <main class="app" aria-label="Focus Clock productivity timers">
     <header class="app__header">
-      <div class="app__title">Clock App</div>
-      <div class="app__subtitle">Pomodoro • Timer • Stopwatch</div>
+      <p class="eyebrow">Productivity toolkit</p>
+      <h1 class="app__title">Focus Clock</h1>
+      <p class="app__subtitle">Pomodoro • Timer • Stopwatch</p>
     </header>
 
     <nav class="tabs" role="tablist" aria-label="Clock modes">
@@ -22,7 +31,10 @@
     <section class="panel is-active" id="pomodoro" role="tabpanel">
       <div class="panel__header">
         <span class="chip" id="pomodoro-mode">Work</span>
-        <div class="panel__label">Stay focused with cycles</div>
+        <div class="panel__text">
+          <h2 class="panel__title">Pomodoro</h2>
+          <p class="panel__label">Stay focused with structured work/break cycles.</p>
+        </div>
       </div>
       <div class="time-display" id="pomodoro-display">25:00</div>
       <div class="controls">
@@ -49,7 +61,10 @@
     <section class="panel" id="timer" role="tabpanel" aria-hidden="true">
       <div class="panel__header">
         <span class="chip">Timer</span>
-        <div class="panel__label">Set a custom countdown</div>
+        <div class="panel__text">
+          <h2 class="panel__title">Countdown Timer</h2>
+          <p class="panel__label">Set any duration with optional sound.</p>
+        </div>
       </div>
       <div class="time-display" id="timer-display">00:00</div>
       <div class="inputs inputs--timer">
@@ -76,7 +91,10 @@
     <section class="panel" id="stopwatch" role="tabpanel" aria-hidden="true">
       <div class="panel__header">
         <span class="chip">Stopwatch</span>
-        <div class="panel__label">Track elapsed time</div>
+        <div class="panel__text">
+          <h2 class="panel__title">Lap Stopwatch</h2>
+          <p class="panel__label">Track splits and total elapsed time.</p>
+        </div>
       </div>
       <div class="time-display" id="stopwatch-display">00:00:00</div>
       <div class="controls">
@@ -87,9 +105,11 @@
       </div>
       <div class="laps" id="laps"></div>
     </section>
-  </main>
 
-  <div id="beep" aria-hidden="true"></div>
-  <script src="script.js"></script>
+    <footer class="app__footer">
+      <p>Lightweight, mobile-friendly timer suite with saved preferences and audible alerts.</p>
+    </footer>
+  </main>
+  <script src="script.js" defer></script>
 </body>
 </html>
