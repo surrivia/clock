@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clock</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app" aria-label="Clock App">
+    <header class="app__header">
+      <div class="app__title">Clock App</div>
+      <div class="app__subtitle">Pomodoro • Timer • Stopwatch</div>
+    </header>
+
+    <nav class="tabs" role="tablist" aria-label="Clock modes">
+      <button class="tab is-active" data-tab="pomodoro" role="tab" aria-selected="true">Pomodoro</button>
+      <button class="tab" data-tab="timer" role="tab" aria-selected="false">Timer</button>
+      <button class="tab" data-tab="stopwatch" role="tab" aria-selected="false">Stopwatch</button>
+    </nav>
+
+    <section class="panel is-active" id="pomodoro" role="tabpanel">
+      <div class="panel__header">
+        <span class="chip" id="pomodoro-mode">Work</span>
+        <div class="panel__label">Stay focused with cycles</div>
+      </div>
+      <div class="time-display" id="pomodoro-display">25:00</div>
+      <div class="controls">
+        <button class="btn" id="pomodoro-start">Start</button>
+        <button class="btn" id="pomodoro-pause">Pause</button>
+        <button class="btn" id="pomodoro-reset">Reset</button>
+      </div>
+      <div class="inputs">
+        <label>
+          Work (min)
+          <input type="number" id="work-min" min="1" max="90" value="25" />
+        </label>
+        <label>
+          Break (min)
+          <input type="number" id="break-min" min="1" max="30" value="5" />
+        </label>
+        <label class="toggle">
+          <input type="checkbox" id="pomodoro-sound" checked />
+          <span>Sound alert</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="panel" id="timer" role="tabpanel" aria-hidden="true">
+      <div class="panel__header">
+        <span class="chip">Timer</span>
+        <div class="panel__label">Set a custom countdown</div>
+      </div>
+      <div class="time-display" id="timer-display">00:00</div>
+      <div class="inputs inputs--timer">
+        <label>
+          Minutes
+          <input type="number" id="timer-min" min="0" max="999" value="0" />
+        </label>
+        <label>
+          Seconds
+          <input type="number" id="timer-sec" min="0" max="59" value="0" />
+        </label>
+      </div>
+      <div class="controls">
+        <button class="btn" id="timer-start">Start</button>
+        <button class="btn" id="timer-pause">Pause</button>
+        <button class="btn" id="timer-reset">Reset</button>
+      </div>
+      <label class="toggle">
+        <input type="checkbox" id="timer-sound" checked />
+        <span>Sound alert</span>
+      </label>
+    </section>
+
+    <section class="panel" id="stopwatch" role="tabpanel" aria-hidden="true">
+      <div class="panel__header">
+        <span class="chip">Stopwatch</span>
+        <div class="panel__label">Track elapsed time</div>
+      </div>
+      <div class="time-display" id="stopwatch-display">00:00:00</div>
+      <div class="controls">
+        <button class="btn" id="stopwatch-start">Start</button>
+        <button class="btn" id="stopwatch-pause">Pause</button>
+        <button class="btn" id="stopwatch-reset">Reset</button>
+        <button class="btn btn--ghost" id="stopwatch-lap">Lap</button>
+      </div>
+      <div class="laps" id="laps"></div>
+    </section>
+  </main>
+
+  <div id="beep" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
